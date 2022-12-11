@@ -171,6 +171,19 @@ class Plotter:
         plt.savefig(self.savePath + 'fixed_PR2.png')
         plt.show()
         plt.figure()
+
+        for i in range(len(dataFixed)):
+            plt.vlines(i + 1, dataFixed[i][0]*1.09126, dataFixed[i][1]*1.09126, 'C0', lw=1)
+        plt.plot([1, len(dataFixed)], [tau[0]*1.09126, tau[0]*1.09126], label="$Lin_1$")
+        for i in range(len(eDataFixed)):
+            plt.vlines(i + 1, eDataFixed[i][0], eDataFixed[i][1], 'C1', lw=1)
+        plt.plot([1, len(eIntervals)], [eTau[0], eTau[0]], color='green', label="$Lin_1$")
+        plt.legend()
+        plt.title('Data without linear drifting')
+        plt.xlabel('n')
+        plt.ylabel('mV')
+        plt.savefig(self.savePath + 'combine_PR2.png')
+        plt.show()
         return
 
     def plot_interval_hist(self, x : list, color='b', label1=""):

@@ -30,12 +30,12 @@ class Solution:
 
     def plot(self):
         plotter = pltr.Plotter(self.isShow, self.isSave, self.savePath)
-        plotter.plotInputDatas(self.data, self.data2)
-        plotter.plotHystW(self.w, self.etalonW)
-        plotter.plotIntervals(self.data, self.data2, self.eps)
-        plotter.plotLinearRegression(self.data, self.tau, self.w, self.data2, self.etalonTau, self.etalonW, self.eps)
+        # plotter.plotInputDatas(self.data, self.data2)
+        # plotter.plotHystW(self.w, self.etalonW)
+        # plotter.plotIntervals(self.data, self.data2, self.eps)
+        # plotter.plotLinearRegression(self.data, self.tau, self.w, self.data2, self.etalonTau, self.etalonW, self.eps)
         plotter.plotFixedHyst_Intervals(self.data, self.tau, self.w, self.data2, self.etalonTau, self.etalonW, self.eps)
-        plotter.plotJK(self.data, self.tau, self.w, self.data2, self.etalonTau, self.etalonW, self.eps)
+        # plotter.plotJK(self.data, self.tau, self.w, self.data2, self.etalonTau, self.etalonW, self.eps)
         
         return
 
